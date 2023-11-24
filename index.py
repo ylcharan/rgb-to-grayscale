@@ -1,34 +1,16 @@
-# Deen Aariff
+class Pattern: 
+    def pattern1(self,n):
+        for _ in range(n):
+            print("*" * n)
+    def pattern2(self,n):
+        for i in range(1,n+1):
+            if (i == 1 or i == n):
+                print("*"*n)
+            else:
+                print("*"+" "*(n-2)+"*")
+    # def pattern3(self,n):
+        
 
-from scipy import misc
-import numpy as np
-import matplotlib
-import matplotlib.pyplot as plt 
-import sys as sys
-
-
-image = plt.imread("img.png")
-
-# the shape of the image
-print(image.shape)
-
-# Intialize a new array of zeroes with the same shape
-grey = np.zeros((image.shape[0],image.shape[1]));
-grey2 = np.zeros((image.shape[0],image.shape[1]));
-
-# 'Human' Average - adapted for human eyes
-def average1(pixel):
-    return (0.299*pixel[0] + 0.587*pixel[1] + 0.114*pixel[2])/3
-
-# Raw Average 
-def average2(pixel):
-    return np.average(pixel);
-
-# Map averages of pixels to the grey image
-for r in range(len(image)): 
-    for c in range(len(image[r])): 
-        # Use human average
-        grey[r][c] = average1(image[r][c]);
-
-plt.imshow(grey, cmap = matplotlib.cm.Greys_r) 
-plt.show()
+pt = Pattern()
+num = int(input("num: "))
+pt.pattern3(num)
